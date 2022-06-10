@@ -1,0 +1,7 @@
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --header --all --group-directories-first"
+fi
+alias tf="terraform"
+alias dotfiles='/usr/bin/git --git-dir=/home/justin/.dotfiles/ --work-tree=/home/justin'
+alias dfg=dotfiles
