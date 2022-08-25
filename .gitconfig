@@ -1,3 +1,6 @@
 [user]
-	email = justin@sasys.com.au
+	email = justin@nais.dev
 	name = Justin Naismith
+	
+[includeIf "gitdir:~/dev/work/sasys/"]
+    path = ~/dev/work/sasys/.gitconfig
