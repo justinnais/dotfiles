@@ -1,0 +1,9 @@
+[user]
+	name = Justin Naismith
+	email = justin@nais.dev
+[pull]
+	ff = true
+[blame]
+  ignoreRevsFile = .git-blame-ignore-revs
+[alias]
+  fomo = !git fetch origin main && git rebase origin/main --autostash
