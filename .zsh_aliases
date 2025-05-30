@@ -1,6 +1,5 @@
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --header --all --group-directories-first"
-fi
+alias cdk="npx cdk"
+alias nx="npx nx"
+alias cat="bat"
 alias dotfiles='/usr/bin/git --git-dir=/Users/justinnaismith/.dotfiles/ --work-tree=/Users/justinnaismith'
 alias dfg=dotfiles
