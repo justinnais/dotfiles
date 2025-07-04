@@ -1,0 +1,11 @@
+{
+  "itEachBlock": {
+    "prefix": "tite",
+    "body": [
+      "it.each(${1:data})(\"${2:title}\", (${3:params}) => {",
+      "  ${0:// test implementation}",
+      "});"
+    ],
+    "description": "Testing `it.each` block"
+  }
+}

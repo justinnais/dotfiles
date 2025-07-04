@@ -1,5 +1,5 @@
-alias cdk="npx cdk"
-alias nx="npx nx"
 alias cat="bat"
-alias dotfiles='/usr/bin/git --git-dir=/Users/justinnaismith/.dotfiles/ --work-tree=/Users/justinnaismith'
-alias dfg=dotfiles
+alias grep="rg"
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dfg='dotfiles'
+alias lazydfg='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'

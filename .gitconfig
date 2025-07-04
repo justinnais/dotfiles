@@ -1,9 +1,14 @@
 [user]
 	name = Justin Naismith
 	email = justin@nais.dev
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEMLvn6ujkZGnOTWr+UDBdmk/d/M1H0PHiCWsCqD0V7V
 [pull]
 	ff = true
-[blame]
-  ignoreRevsFile = .git-blame-ignore-revs
 [alias]
   fomo = !git fetch origin main && git rebase origin/main --autostash
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
