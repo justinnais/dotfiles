@@ -1,5 +1,4 @@
+[[ -f "$HOME/.dotfiles_aliases" ]] && source "$HOME/.dotfiles_aliases"
 alias cat="bat"
 alias grep="rg"
-alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dfg='dotfiles'
-alias lazydfg='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
