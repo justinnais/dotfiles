@@ -4,26 +4,23 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Disable the physical Escape key",
+            "description": "Disable escape key",
             "manipulators": [
               {
-                "type": "basic",
                 "from": {
                   "key_code": "escape",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
-                  {
-                    "key_code": "vk_none"
-                  }
-                ]
+                  { "key_code": "vk_none" },
+                  { "shell_command": "afplay /System/Library/Sounds/Tink.aiff" }
+                ],
+                "type": "basic"
               }
             ]
           },
           {
-            "description": "Change hyper-(hjkl) to (←↓↑→) keys",
+            "description": "Hyper hjkl → arrow keys",
             "manipulators": [
               {
                 "from": {
@@ -92,10 +89,15 @@
             ]
           },
           {
-            "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) | Escape if alone | Use fn + caps lock to enable caps lock",
+            "description": "Caps Lock → Hyper | Escape if alone",
             "manipulators": [
               {
-                "from": { "key_code": "caps_lock" },
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
                 "to": [
                   {
                     "key_code": "left_shift",
@@ -104,6 +106,24 @@
                 ],
                 "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Press both shift keys to toggle Caps Lock",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "simultaneous": [
+                    { "key_code": "left_shift" },
+                    { "key_code": "right_shift" }
+                  ],
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "caps_lock" }]
               }
             ]
           },
@@ -123,11 +143,7 @@
                     "optional": ["any"]
                   }
                 },
-                "to": [
-                  {
-                    "key_code": "delete_forward"
-                  }
-                ],
+                "to": [{ "key_code": "delete_forward" }],
                 "type": "basic"
               }
             ]
