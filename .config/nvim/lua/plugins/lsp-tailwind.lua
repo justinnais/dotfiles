@@ -18,7 +18,7 @@ return {
           }
 
           require("lspconfig").tailwindcss.setup(opts)
-          return true -- ← this tells LazyVim to *not* auto-setup, use our config
+          return true
         end,
       },
     },
