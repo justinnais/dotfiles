@@ -4,6 +4,68 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "Copy URL with Command+Shift+C",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": ["^org\\.mozilla\\.firefox.*$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["command", "shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["command"]
+                  },
+                  {
+                    "key_code": "c",
+                    "modifiers": ["command"]
+                  },
+                  { "key_code": "escape" },
+                  {
+                    "shell_command": "/opt/homebrew/bin/terminal-notifier -title 'Copied URL to clipboard' -message \"$(pbpaste | sed 's/\\(.\\{100\\}\\).*/\\1.../')\" -group 'firefox-url-copy' -sound Frog"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Toggle sidebar with Command+S",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": ["^org\\.mozilla\\.firefox.*$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": ["control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Disable escape key",
             "manipulators": [
               {
@@ -94,9 +156,7 @@
               {
                 "from": {
                   "key_code": "caps_lock",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -113,17 +173,15 @@
             "description": "Press both shift keys to toggle Caps Lock",
             "manipulators": [
               {
-                "type": "basic",
                 "from": {
+                  "modifiers": { "optional": ["any"] },
                   "simultaneous": [
                     { "key_code": "left_shift" },
                     { "key_code": "right_shift" }
-                  ],
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  ]
                 },
-                "to": [{ "key_code": "caps_lock" }]
+                "to": [{ "key_code": "caps_lock" }],
+                "type": "basic"
               }
             ]
           },
