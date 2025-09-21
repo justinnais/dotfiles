@@ -1,4 +1,4 @@
-theme = dark:tokyonight,light:tokyonight-day
+theme = dark:TokyoNight,light:TokyoNight Day
 macos-titlebar-style = transparent
 background-opacity = 0.9
 background-blur = true
