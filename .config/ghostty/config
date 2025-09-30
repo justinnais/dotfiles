@@ -3,3 +3,4 @@ macos-titlebar-style = transparent
 background-opacity = 0.9
 background-blur = true
 macos-option-as-alt = true
+keybind = shift+enter=text:\x1b\r
