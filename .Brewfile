@@ -1,6 +1,7 @@
 brew "asdf"
 brew "awscli"
 brew "bat"
+brew "commitizen"
 brew "eza"
 brew "fd"
 brew "fnm"

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
+git:
+  overrideGpg: true
+customCommands:
+  - key: "C"
+    description: "Conventional commit (subject only)"
+    context: "files"
+    command: >-
+      git commit -m "{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Description}}"
+    prompts:
+      - type: menu
+        key: Type
+        title: "Commit type"
+        options:
+          - name: "feat"
+            description: "A new feature"
+            value: "feat"
+          - name: "fix"
+            description: "A bug fix"
+            value: "fix"
+          - name: "refactor"
+            description: "Code refactor"
+            value: "refactor"
+          - name: "chore"
+            description: "Other changes (gitignore, etc)"
+            value: "chore"
+          - name: "test"
+            description: "Adding or fixing tests"
+            value: "test"
+          - name: "docs"
+            description: "Documentation changes"
+            value: "docs"
+          - name: "style"
+            description: "Code style (formatting, missing semicolons, etc)"
+            value: "style"
+          - name: "perf"
+            description: "Performance improvements"
+            value: "perf"
+          - name: "build"
+            description: "Build system or external dependencies"
+            value: "build"
+          - name: "ci"
+            description: "CI/CD configuration"
+            value: "ci"
+          - name: "revert"
+            description: "Revert a previous commit"
+            value: "revert"
+      - type: input
+        key: Scope
+        title: "Scope (optional, press enter to skip)"
+        initialValue: ""
+      - type: input
+        key: Description
+        title: "Description"
